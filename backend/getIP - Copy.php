@@ -1,3 +1,4 @@
+<script type="text/javascript" src="speedtest1.js"></script>
 <?php
 
 /*
@@ -113,8 +114,6 @@ function getIspInfo($ip)
         return null;
     }
 
-    
-
     return $data;
 }
 
@@ -135,8 +134,7 @@ function getIsp($rawIspInfo)
     }
 
     // Remove AS##### from ISP name, if present
-    $ispI = preg_replace('/AS\\d+\\s/', '', $rawIspInfo['org']);
-    return $ispI;
+    return preg_replace('/AS\\d+\\s/', '', $rawIspInfo['org']);
 }
 
 /**
@@ -344,7 +342,6 @@ if (!isset($_GET['isp'])) {
 
 $rawIspInfo = getIspInfo($ip);
 $isp = getIsp($rawIspInfo);
-
 $distance = getDistance($rawIspInfo);
 
 sendResponse($ip, $isp, $distance, $rawIspInfo);
