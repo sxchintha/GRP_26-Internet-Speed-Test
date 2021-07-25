@@ -15,25 +15,10 @@ header('Pragma: no-cache');
 
 <link rel="shortcut icon" href="../favicon.ico">
 <link rel="stylesheet" href="../css/index1.css">
+<link rel="stylesheet" href="../css/connections.css">
+<script type="text/javascript" src="../connections.js"></script>
 
 <title>GRP_26 SPEED TEST</title>
-
-
-<style type="text/css">
-
-  table{
-      width:80%;
-      margin: 10px;
-  }
-  table, tr, th, td {
-      border: 1px solid #AAAAAA;
-  }
-  th {
-  }
-  td {
-      text-align: left;
-  }
-</style>
 
 </head>
 <body>
@@ -52,78 +37,114 @@ header('Pragma: no-cache');
     </ul>
   </nav>
   <br><br>
+</center>
 
-
-
-
-  <form>
-    <div align="left";>
-      <input type="checkbox" id="ISP" name="ISP" value="Airtel">
-      <label for="ISP">Airtel</label><br>
-      <input type="checkbox" id="ISP" name="ISP" value="Dialog">
-      <label for="ISP">Dialog</label><br>
-      <input type="checkbox" id="ISP" name="ISP" value="Etisalat">
-      <label for="ISP">Etisalat</label><br>
-      <input type="checkbox" id="ISP" name="ISP" value="Hutch">
-      <label for="ISP">Hutch</label><br>
-      <input type="checkbox" id="ISP" name="ISP" value="Mobitel">
-      <label for="ISP">Mobitel</label><br>
-      <input type="checkbox" id="ISP" name="ISP" value="Sri Lanka Telecom">
-      <label for="ISP">Sri Lanka Telecom</label><br>
-
+  <form method="post" action="">
+    <div>
+      <div id="list1" class="dropdown-check-list" tabindex="100">
+        <span class="anchor" onclick="showdrop()">Select ISP</span>
+        <ul class="items" style="text-align: left;">
+          <li><input type="checkbox" id="ISP" name="ISP[]" value="Airtel">Airtel </li>
+          <li><input type="checkbox" id="ISP" name="ISP[]" value="Dialog">Dialog</li>
+          <li><input type="checkbox" id="ISP" name="ISP[]" value="Hutch">Hutch </li>
+          <li><input type="checkbox" id="ISP" name="ISP[]" value="Mobitel">Mobitel </li>
+          <li><input type="checkbox" id="ISP" name="ISP[]" value="Sri Lanka Telecom">SLT </li>
+        </ul>
+      </div>
+      <br><br>
+      <div id="list2" class="dropdown-check-list" tabindex="100">
+        <span class="anchor" onclick="showdrop1()">Select District</span>
+        <ul class="items" style="text-align: left;">
+          <li><input type="checkbox" id="district" name="district[]" value="Ampara">Ampara </li>
+          <li><input type="checkbox" id="district" name="district[]" value="Anuradhapura">Anuradhapura</li>
+          <li><input type="checkbox" id="district" name="district[]" value="Badulla">Badulla </li>
+          <li><input type="checkbox" id="district" name="district[]" value="Batticaloa">Batticaloa </li>
+          <li><input type="checkbox" id="district" name="district[]" value="Colombo">Colombo</li>
+          <li><input type="checkbox" id="district" name="district[]" value="Galle">Galle </li>
+          <li><input type="checkbox" id="district" name="district[]" value="Gampaha">Gampaha</li>
+          <li><input type="checkbox" id="district" name="district[]" value="Hambantota">Hambantota </li>
+          <li><input type="checkbox" id="district" name="district[]" value="Jaffna">Jaffna </li>
+          <li><input type="checkbox" id="district" name="district[]" value="Kalutara">Kalutara</li>
+          <li><input type="checkbox" id="district" name="district[]" value="Kandy">Kandy </li>
+          <li><input type="checkbox" id="district" name="district[]" value="Kegalle">Kegalle</li>
+          <li><input type="checkbox" id="district" name="district[]" value="Kilinochchi">Kilinochchi </li>
+          <li><input type="checkbox" id="district" name="district[]" value="Kurunegala">Kurunegala </li>
+          <li><input type="checkbox" id="district" name="district[]" value="Mannar">Mannar</li>
+          <li><input type="checkbox" id="district" name="district[]" value="Matale">Matale </li>
+          <li><input type="checkbox" id="district" name="district[]" value="Matara">Matara</li>
+          <li><input type="checkbox" id="district" name="district[]" value="Monaragala">Monaragala </li>
+          <li><input type="checkbox" id="district" name="district[]" value="Mullaitivu">Mullaitivu </li>
+          <li><input type="checkbox" id="district" name="district[]" value="Nuwara Eliya">Nuwara Eliya</li>
+          <li><input type="checkbox" id="district" name="district[]" value="Polonnaruwa">Polonnaruwa </li>
+          <li><input type="checkbox" id="district" name="district[]" value="Puttalam">Puttalam</li>
+          <li><input type="checkbox" id="district" name="district[]" value="Ratnapura">Ratnapura </li>
+          <li><input type="checkbox" id="district" name="district[]" value="Trincomalee">Trincomalee </li>
+          <li><input type="checkbox" id="district" name="district[]" value="Vavuniya">Vavuniya</li>
+        </ul>
+      <br><br>
     </div>
 
+
+      <input type="checkbox" onClick="selectAllISP(this)"> Select all ISPs<br>
+      <input type="checkbox" onClick="selectAllDistricts(this)"> Select all Districts<br><br>
+      <input id="submitDistrictISP" type="submit" name="submit" value="Submit">
+      <br><br>
   </form>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <table>
-      <tr>
-        <th style="width:20px"></th>
-        <th>ISP</th>
-        <th>Average<br>Download Speed<br>(Mbps)</th>
-        <th>Average<br>Upload Speed<br>(Mbps)</th>
-        <th>District</th>
-      </tr>
-
+  <center>
+    
       <?php
       require 'config.php';
 
-      $sql="SELECT ispinfo,ROUND(AVG(dl),2)as dlSpeed,ROUND(AVG(ul),2) as ulSpeed,district from `speedtest_users` group by district,ispinfo order by ispinfo,district";
-      $result=$con->query($sql);
-      $n=1;
+      if(isset($_POST['submit'])){
+        if (!empty($_POST['ISP']) && !empty($_POST['district'])) {
 
-      while ($row=$result->fetch_assoc()) {
-      
-      ?>
+              $chkHead = 0;
+              $n=1;
+          foreach ($_POST['ISP'] as $ispVal) {
+            foreach ($_POST['district'] as $districtVal) {
 
-      <tr>
-        <td style="padding-left: 10px; padding-right: 10px;"><?php echo $n; $n++; ?></td>
-        <td style="padding-left: 10px; padding-top: 20px; padding-bottom: 20px;"><?php echo $row["ispinfo"]; ?></td>
-        <td style="padding-left: 10px;"><?php echo $row["dlSpeed"]; ?></td>
-        <td style="padding-left: 10px;"><?php echo $row["ulSpeed"]; ?></td>
-        <td style="padding-left: 10px;"><?php echo $row["district"]; ?></td>
-      </tr>
+              $sql="SELECT ispinfo,ROUND(AVG(dl),2)as dlSpeed,ROUND(AVG(ul),2) as ulSpeed,district from `speedtest_users` where ispinfo like '%$ispVal%' and district='$districtVal' group by district,ispinfo order by ispinfo,district";
+              $result=$con->query($sql);
 
-      <?php
+              if($result == nul) {
+                echo '<table style="display:none;">';
 
+              } else if(!empty($result) && $chkHead==0) {
+
+                echo '<table>
+                <tr>
+                  <th style="width:20px"></th>
+                  <th>ISP</th>
+                  <th style="padding-top: 5px; padding-bottom: 5px;">Average<br>Download Speed<br>(Mbps)</th>
+                  <th>Average<br>Upload Speed<br>(Mbps)</th>
+                  <th>District</th>
+                </tr>';
+                $chkHead = 1;
+              }
+
+              while ($row=$result->fetch_assoc()) {
+              
+              ?>
+
+              <tr>
+                <td><?php echo $n; $n++; ?></td>
+                <td style="padding-top: 20px; padding-bottom: 20px; max-width: 300px"><?php echo $row["ispinfo"]; ?></td>
+                <td style="text-align: center;"><?php echo $row["dlSpeed"]; ?></td>
+                <td style="text-align: center;"><?php echo $row["ulSpeed"]; ?></td>
+                <td><?php echo $row["district"]; ?></td>
+              </tr>
+
+              <?php
+
+              }
+            }
+          }
         }
-        $con->close();
+      }
 
-      ?>
-
+      $con->close();
+    ?>
   </table>
   </center>
 
