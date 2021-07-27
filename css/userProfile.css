@@ -1,0 +1,79 @@
+
+body {
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#profile {
+ border-collapse: collapse;
+ width: 100%;
+ margin: 10px 100px;
+}
+
+#profile td {
+  text-align: left;
+  padding: 8px;
+  width: 50%;
+}
+
+#all td{
+  text-align: left;
+  padding: 8px;
+  width: 50%;
+}
+
+#profile tr:nth-child(even){background-color: #f2f2f2}
+#profile tr:hover{background-color: #ddd}
+
+#button1 {
+  font-size: 16px;
+  width: 40%;
+  background-color: #6060aa;
+  color: white;
+  padding: 14px 20px;
+   margin: 8px 300px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#button1:hover {
+  background-color: white;
+  padding: 12px 18px;
+  border: 2px solid #6060aa;
+  color: black;
+  
+}
+
+#button2 {
+  width: 40%;
+  background-color: #ff2e01;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 300px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#button2:hover {
+  background-color: white;
+  padding: 12px 18px;
+  border: 2px solid #ff2e01;
+  color: black;
+  
+}
+
+.login {
+background-color: white;
+
+  
+  border-radius: 5px;
+  overflow: hidden;    
+  padding: 8px 50px;
+  margin: 10px 100px;
+  
+}
