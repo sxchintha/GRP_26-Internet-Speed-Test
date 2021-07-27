@@ -16,7 +16,7 @@ header('Pragma: no-cache');
 <link rel="shortcut icon" href="../favicon.ico">
 <link rel="stylesheet" href="../css/index1.css">
 <link rel="stylesheet" href="../css/connections.css">
-<script type="text/javascript" src="../connections.js"></script>
+<script type="text/javascript" src="../js/connections.js"></script>
 
 <title>GRP_26 SPEED TEST</title>
 
@@ -32,8 +32,8 @@ header('Pragma: no-cache');
       <li><a href="../index.php">TestSpeed</a></li>
       <li><a href="connections.php">Connections</a></li>
       <li><a href="map.php">Map</a></li>
-      <li><a href="#">Activities</a></li>
-      <li><a href="#">Account</a></li>
+      <li><a href="activities.php">Activities</a></li>
+      <li><a href="userProfile.php">Account</a></li>
     </ul>
   </nav>
   <br><br>
@@ -81,14 +81,15 @@ header('Pragma: no-cache');
           <li><input type="checkbox" id="district" name="district[]" value="Trincomalee">Trincomalee </li>
           <li><input type="checkbox" id="district" name="district[]" value="Vavuniya">Vavuniya</li>
         </ul>
+      </div>
       <br><br>
-    </div>
 
 
       <input type="checkbox" onClick="selectAllISP(this)"> Select all ISPs<br>
       <input type="checkbox" onClick="selectAllDistricts(this)"> Select all Districts<br><br>
       <input id="submitDistrictISP" type="submit" name="submit" value="Submit">
       <br><br>
+
   </form>
 
   <center>
