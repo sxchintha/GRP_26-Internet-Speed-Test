@@ -68,28 +68,14 @@ header('Pragma: no-cache');
   </tr>
   
 </table></td>
-
-<td >
-
-<a href ="activities.php">
-<input type ="button" name="activities" value="Activities" id="button1" >
-</a>
-
-<a href="updateProfile">
-<input type="submit" name="updateProfile" value="Update Profile" id="button1">
-</a>
-
-<a href ="deleteProfile">
-<input type ="button" name="delete" value="Delete Profile" id="button2" >
-</a>
-
-<a href ="logout.php">
-<input type ="button" name="logout" value="Logout" id="button1" >
-</a>
-
-</td>
 </tr>
 </table>
+
+<a href ="logout.php">
+<input type ="button" name="logout" value="Logout" id="button2" >
+</a>
+
+
 </div>
 
 </body>
