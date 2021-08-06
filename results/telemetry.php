@@ -16,10 +16,20 @@ $ul = $_POST['ul'];
 $ping = $_POST['ping'];
 $jitter = $_POST['jitter'];
 $log = $_POST['log'];
-$user = "sachintha";
 $district = $_COOKIE["district"];
 $latitude = $_COOKIE["latitude"];
 $longitude = $_COOKIE["longitude"];
+
+// Initialize the session
+session_start();
+ 
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    $user = "";
+}
+else{
+    $user = $_SESSION["user_name"];
+}
 
 if (isset($redact_ip_addresses) && true === $redact_ip_addresses) {
     $ip = '0.0.0.0';
