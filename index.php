@@ -33,8 +33,8 @@
 	    <li><a href="index.php">TestSpeed</a></li>
 	    <li><a href="php/connections.php">Connections</a></li>
 	    <li><a href="php/map.php">Map</a></li>
-	    <li><a href="#">Activities</a></li>
-	    <li><a href="#">Account</a></li>
+	    <li><a href="php/activities.php">Activities</a></li>
+	    <li><a href="php/userProfile.php">Account</a></li>
 	  </ul>
 	</nav>
 	</center><br><br>
