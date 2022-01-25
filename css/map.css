@@ -71,6 +71,12 @@
   margin: 0;
   border: 1px solid #ccc;
   border-top: none;
+  position: absolute;
+  z-index: 5;
+  background-color: white;
+  overflow: auto;
+  width: 300px;
+  max-height: 450px;
 }
 
 .dropdown-check-list ul.items li {

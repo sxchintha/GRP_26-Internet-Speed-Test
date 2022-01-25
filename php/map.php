@@ -8,8 +8,8 @@
 
 <link rel="shortcut icon" href="../favicon.ico">
 <link rel="stylesheet" href="../css/index1.css">
-<script type="text/javascript" src="speedtest.js"></script>
-<script type="text/javascript" src="speedtest1.js"></script>
+<script type="text/javascript" src="../speedtest.js"></script>
+<script type="text/javascript" src="../speedtest1.js"></script>
 
 <title>GRP_26 SPEED TEST</title>
 
